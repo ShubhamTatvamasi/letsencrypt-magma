@@ -1,0 +1,28 @@
+---
+version: "3"
+services:
+  issue:
+    image: neilpang/acme.sh
+    volumes:
+      - ./acme.sh/:/acme.sh/
+    command: |
+      --issue
+      -d *.nms.orc8r.magmacore.link
+      --server letsencrypt
+      --ecc
+      --keylength ec-256
+      --dns
+      --yes-I-know-dns-manual-mode-enough-go-ahead-please
+  renew:
+    image: neilpang/acme.sh
+    volumes:
+      - ./acme.sh/:/acme.sh/
+    command: |
+      --renew
+      -d *.nms.orc8r.magmacore.link
+      --server letsencrypt
+      --ecc
+      --keylength ec-256
+      --dns
+      --yes-I-know-dns-manual-mode-enough-go-ahead-please
+...
