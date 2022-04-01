@@ -7,7 +7,7 @@ Issue certificate request:
 docker-compose run issue
 ```
 
-Add the following TXT record:
+Add the TXT record in your DNS which you received from command above:
 ```
 Domain: '_acme-challenge.nms.orc8r.magmacore.link'
 TXT value: '1MVktmqlM_0_vFUg_wywv-8gKvKRtwNPGSacxsOz2FI'
